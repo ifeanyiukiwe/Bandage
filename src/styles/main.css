@@ -1,0 +1,177 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* NAVBAR STARTS */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: white;
+  height: 70px;
+}
+
+.navLogo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #252b42;
+  padding-left: 20px;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+}
+
+.navbarRightSide {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+.nav-links ul li {
+  margin: 0 10px;
+}
+
+.nav-links ul li a {
+  color: #737373;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.nav-links ul li a:hover {
+  color: #23a6f0;
+}
+
+.accountWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.accountWrapper .login,
+.accountWrapper .register {
+  cursor: pointer;
+  color: #23a6f0;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.profileIcon1 {
+  height: 15px !important;
+  width: 15px !important;
+}
+
+li {
+  list-style: none;
+}
+
+.cartLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.cartWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.cartIcon {
+  height: 15px;
+  width: 15px;
+}
+
+.cartCount {
+  font-size: 12px;
+  font-weight: 600;
+  color: #23a6f0;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 100;
+    height: 0px;
+  }
+
+  .nav-links ul {
+    justify-content: center;
+    padding-left: 0px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links ul li {
+    margin: 10px 0;
+    margin-top: 20px;
+  }
+
+  .nav-links ul li a {
+    color: #737373;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+  .nav-links ul li:hover {
+    color: #23a6f0;
+  }
+
+  .nav-toggle:checked + .hamburger + .nav-links {
+    display: flex;
+    padding-bottom: 100%;
+  }
+
+  .accountWrapper {
+    display: none;
+  }
+
+  .cartWrapper {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+/* NAVBAR ENDS */

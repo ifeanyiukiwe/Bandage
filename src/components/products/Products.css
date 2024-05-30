@@ -1,0 +1,29 @@
+.products {
+  /* display: flex; */
+  /* flex-wrap: wrap; */
+  /* gap: 20px; */
+  /* justify-content: center; */
+  width: 80%;
+  margin: auto;
+  display: grid;
+  gap: 1.5rem;
+
+  @media (min-width: 1280px) {
+    grid-template-columns: repeat(5, minmax(0px, 1fr)) !important;
+  }
+
+  @media (min-width: 360px) {
+    grid-template-columns: repeat(1, minmax(0px, 1fr));
+  }
+}
+
+.product {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+}

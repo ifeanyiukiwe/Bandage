@@ -39,22 +39,14 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import CartPage from "./pages/CartPage";
+import ShopPage from "./pages/ShopPage";
 
 const App = () => {
   return (
     <Router>
-      {/* <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
-      </nav> */}
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/shop/:id" element={<ShopPage />} />
         <Route path="/cart" element={<CartPage />} />
       </Routes>
     </Router>

@@ -2,6 +2,7 @@ import React from "react";
 import "./Products.css";
 import { useGetProductsQuery } from "../../features/products/productsApi";
 import { truncateWord } from "../../utils";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const { data, error, isLoading } = useGetProductsQuery();
@@ -12,12 +13,12 @@ const Products = () => {
   return (
     <div className="products">
       {data.products.map((product) => (
-        <div key={product.id} className="product">
+        <Link to={`shop/${product.id}`} key={product.id} className="product">
           <img src={product.thumbnail} alt={product.title} />
           <h3>{truncateWord(product.title)}</h3>
           <p>{truncateWord(product.description)}</p>
           <p>${product.price}</p>
-        </div>
+        </Link>
       ))}
     </div>
   );

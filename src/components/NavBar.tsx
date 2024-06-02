@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 // Navbar icons
@@ -9,6 +9,13 @@ import favorite from "../assets/favorite.png";
 
 function NavBar() {
   const [toggle, setToggle] = useState(false);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const storedProducts =
+      JSON.parse(localStorage.getItem("productArray")) || [];
+    setProducts(storedProducts);
+  }, [products]);
   return (
     <nav className="navbar">
       <div className="navLogo">Bandage</div>
@@ -130,7 +137,7 @@ function NavBar() {
             <Link to="/cart" className="cartLink">
               <div className="cartWrapper">
                 <img src={cart} alt="cart icon" className="cartIcon" />
-                <div className="cartCount">1</div>
+                <div className="cartCount">{products.length}</div>
               </div>
             </Link>
           </li>
@@ -138,7 +145,7 @@ function NavBar() {
             <Link to="#" className="cartLink">
               <div className="cartWrapper">
                 <img src={favorite} alt="cart icon" className="cartIcon" />
-                <div className="cartCount">1</div>
+                <div className="cartCount">0</div>
               </div>
             </Link>
           </li>

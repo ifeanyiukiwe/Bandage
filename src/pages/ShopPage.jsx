@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ShopPage.css";
 
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useGetProductByIdQuery } from "../features/products/productsApi";
 import Products from "../components/products/Products";
 import NavBar from "../components/NavBar";
@@ -15,6 +15,7 @@ import youtube from "../assets/youtube.png";
 import facebook from "../assets/facebook.png";
 import twitter from "../assets/X.png";
 import detail from "../assets/detail.png";
+import like from "../assets/like.png";
 
 const ShopPage = () => {
   const { id } = useParams();
@@ -92,11 +93,20 @@ const ShopPage = () => {
           width: "70%",
           margin: "50px auto",
           gap: 10,
+          alignItems: "center",
         }}
       >
-        <p style={{ fontSize: "14px", fontWeight: "700", color: "#252B42" }}>
+        <Link
+          to="/"
+          style={{
+            fontSize: "14px",
+            fontWeight: "700",
+            color: "#252B42",
+            textDecoration: "none",
+          }}
+        >
           Home
-        </p>
+        </Link>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -269,11 +279,10 @@ const ShopPage = () => {
                 fontFamily: "inherit",
                 cursor: "pointer",
               }}
-              
             >
               Select Options
             </button>
-            <svg
+            {/* <svg
               width="40"
               height="40"
               viewBox="0 0 40 40"
@@ -303,7 +312,12 @@ const ShopPage = () => {
                 stroke="#252B42"
                 stroke-width="0.625"
               />
-            </svg>
+            </svg> */}
+            <img
+              src={like}
+              alt="Like"
+              style={{ cursor: "pointer", color: "#000" }}
+            />
             <svg
               width="40"
               height="40"
@@ -313,7 +327,6 @@ const ShopPage = () => {
               style={{ cursor: "pointer" }}
               onClick={() => handleAddToCart(data)}
             >
-
               <rect
                 x="0.5"
                 y="0.5"

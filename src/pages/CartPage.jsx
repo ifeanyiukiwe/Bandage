@@ -14,6 +14,7 @@ import twitter from "../assets/X.png";
 
 import payout from "../assets/payout.png";
 import cart from "../assets/cart1.png";
+import { Link } from "react-router-dom";
 
 const CartPage = () => {
   const [products, setProducts] = useState([]);
@@ -92,10 +93,26 @@ const CartPage = () => {
       <NavBar />
 
       {/* TABS */}
-      <div style={{ display: "flex", width: "70%", margin: "auto", gap: 10 }}>
-        <p style={{ fontSize: "14px", fontWeight: "700", color: "#252B42" }}>
+      <div
+        style={{
+          display: "flex",
+          width: "70%",
+          margin: "auto",
+          gap: 10,
+          alignItems: "center",
+        }}
+      >
+        <Link
+          to="/"
+          style={{
+            fontSize: "14px",
+            fontWeight: "700",
+            color: "#252B42",
+            textDecoration: "none",
+          }}
+        >
           Home
-        </p>
+        </Link>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -292,7 +309,7 @@ const CartPage = () => {
                         color: "#6C6C6C",
                       }}
                     >
-                      ${product.price}x {product.quantity} Item
+                      ${product.price} x {product.quantity} Item
                     </p>
                   </div>
                 </div>

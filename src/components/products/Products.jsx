@@ -5,6 +5,7 @@ import { truncateWord } from "../../utils";
 import { Link } from "react-router-dom";
 
 const Products = () => {
+  // State
   const { data, error, isLoading } = useGetProductsQuery();
 
   if (isLoading) return <div>Loading...</div>;
